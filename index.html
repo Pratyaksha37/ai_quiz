@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quiz Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="/videoplayback.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <div class="start-screen">
+            <h1>AI Quiz Challenge</h1>
+            <div class="category-select">
+                <label for="category">Select Category:</label>
+                <select id="category">
+                    <option value="general">General Knowledge</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                </select>
+            </div>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+
+        <div class="quiz-container" style="display: none;">
+            <div class="header">
+                <span class="score">Score: <span id="score">0</span></span>
+                <span class="timer">Time: <span id="time">30</span>s</span>
+            </div>
+
+            <div class="question-container">
+                <div id="question">Loading question...</div>
+                <div class="loading-spinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Generating new question...</p>
+                </div>
+            </div>
+
+            <div class="options-container">
+                <button class="option" data-index="0"></button>
+                <button class="option" data-index="1"></button>
+                <button class="option" data-index="2"></button>
+                <button class="option" data-index="3"></button>
+            </div>
+
+            <button id="next-btn" style="display: none;">Next Question</button>
+        </div>
+
+        <div class="result-screen" style="display: none;">
+            <h2>Quiz Complete!</h2>
+            <div class="final-score">Final Score: <span id="final-score">0</span></div>
+            <button id="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
